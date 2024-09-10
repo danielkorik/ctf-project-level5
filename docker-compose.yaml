@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  level5-app:
+    image: ghcr.io/danielkorik/level5-app:latest
+    env_file:
+      - ${ENV_FILE:-.env.release}  # Default to .env.release if ENV_FILE is not set
+    ports:
+      - "5000:5000"
